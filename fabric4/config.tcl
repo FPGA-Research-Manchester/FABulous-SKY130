@@ -11,7 +11,12 @@ set ::env(CLOCK_PORT) "UserCLK"
 set ::env(CLOCK_TREE_SYNTH) 0
 set ::env(CELL_PAD) 4
 
-#set ::env(PL_ESTIMATE_PARASITICS) 0
+#skip timing optimization
+set ::env(PL_ESTIMATE_PARASITICS) 0
+set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 0
+set ::env(GLB_RT_ESTIMATE_PARASITICS) 0
+set ::env(ROUTING_CORES) 12
+#set ::env(GLOBAL_ROUTER) cugr
 
 set filename $::env(DESIGN_DIR)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
 if { [file exists $filename] == 1} {
